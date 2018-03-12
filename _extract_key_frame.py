@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import cv2
 import os, shutil
 
-path = "/home/ankita/btp7/final/data"
-temp = "/home/ankita/btp7/final/temp"
-data = "/home/ankita/btp7/final/keyframes"
+path = "/home/ankita/btp7/CBVR/data"
+temp = "/home/ankita/btp7/CBVR/temp"
+data = "/home/ankita/btp7/CBVR/keyframes"
 
 for fold in os.listdir(path):
     # print fold

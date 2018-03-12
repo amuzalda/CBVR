@@ -27,7 +27,7 @@ args = vars(ap.parse_args())
 cd = ColorDescriptor((8, 12, 3))
 
 # load the query video and describe it
-temp = "/home/ankita/btp7/final/temp"
+temp = "/home/ankita/btp7/CBVR/temp"
 i=0
 # print path_video
 cap = cv2.VideoCapture(args["query"])
