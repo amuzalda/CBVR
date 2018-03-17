@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('cbvr App', () => {
+describe('webapp App', () => {
   let page: AppPage;
 
   beforeEach(() => {
