@@ -11,7 +11,6 @@ import glob
 from skimage import io
 from skimage.color import rgb2gray
 import numpy as np
-from matplotlib import pyplot as plt
 
 # construct the argument parser and parse the arguments
 # ap = argparse.ArgumentParser()
