@@ -1,13 +1,15 @@
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, jsonify
 from search import searchVideo
 # set the "static" directory as the static folder.
 # this will ensure that all the static files are under one folder
 app = Flask(__name__, static_url_path='/static')
 
 # serving some static html files
-@app.route('/hello')
-def send_html():
-    return jsonify(message = "Hello")
+@app.route('/data/<path:path>')
+def static_proxy(path):
+  # send_static_file will guess the correct MIME type
+  print(path)
+  return app.send_static_file(path)
 
 
 @app.route('/upload', methods=['POST'])
@@ -19,12 +21,13 @@ def upload_file():
     print (file.filename)
     file.save("uploadedFiles/"+file.filename)
     # TODO: call cbvr function this is written by anmol new content
-    response_filenames = searchVideo(file.filename)
+    # response_filenames = searchVideo(file.filename)
     #
-    print (response_filenames)
+    # print (response_filenames)
+    response_filenames = ['data/CAR/car (21).avi', 'data/CAR/car (21).avi', 'data/CAR/car (14).avi', 'data/CAR/car (13).avi', 'data/WALK/Movie_0042.avi', 'data/CAR/car (13).avi', 'data/WALK/Movie_0042.avi', 'data/MISC/Movie_0025 (2).avi', 'data/CAR/car (11).avi', 'data/CAR/car (18).avi', 'data/CAR/car (7).avi', 'data/CAR/car (7).avi']
 
-    # return response_filenames
-    return "file uploaded"
+    return jsonify(response_filenames)
+    # return "file uploaded"
     # [/home/ankita/btp7/CBVR/data/BIKE/cycle1.avi, /home/ankita/btp7/CBVR/data/BIKE/cycle1.avi]
 
 if __name__ == "__main__":

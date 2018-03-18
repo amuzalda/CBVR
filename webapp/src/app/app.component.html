@@ -1,11 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 Video name:
-<input type="text" name="lajdfk" [(ngModel)]="videoname">
-<button type="submit" (click)="sendName()">Submit</button>
+<input type="file" class="form-control" name="documents" (change)="onChange($event)" [(ngModel)]="videoname" #documents="ngModel">
 <br>
-<video width="400" controls>
-  <source src="mov_bbb.mp4" type="video/mp4">
-  <source src="mov_bbb.ogg" type="video/ogg">
-  Your browser does not support HTML5 video.
-</video>
-<p>This is one video player</p>
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup="{}">
+    <source src="data/test.webm" type='video/webm'>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+  <script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
+<p>This will run {{file}}</p>
+<!-- <button type="submit" (click)="sendName()">Submit</button> -->
+<div *ngFor="let file of responseFiles">
+  <video width="400" controls>
+    <source src="{{file}}">
+    Your browser does not support HTML5 video.
+  </video>
+  <p>This will run {{file}}</p>
+</div>

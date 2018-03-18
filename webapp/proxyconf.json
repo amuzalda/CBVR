@@ -1,0 +1,23 @@
+{
+  "/upload": {
+     "target":  {
+       "host": "localhost",
+       "protocol": "http",
+       "port": 5000
+     },
+     "secure": false,
+     "changeOrigin": true,
+     "logLevel": "info"
+  },
+  "/data": {
+     "target":  {
+       "host": "localhost",
+       "protocol": "http",
+       "port": 3333
+     },
+     "secure": false,
+     "changeOrigin": true,
+     "logLevel": "info",
+     "strip-prefix": true
+  }
+}
