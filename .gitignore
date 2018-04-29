@@ -1,5 +1,4 @@
 # Ignore data folder
-data/**
 uploadedFiles/**
 node_modules
 keyframes/**
