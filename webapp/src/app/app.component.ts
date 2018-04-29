@@ -27,7 +27,7 @@ export class AppComponent {
     let postData = { field1: "field1", field2: "field2" }; // Put your form data variable. This is only example.
     this.pythonService.getRelatedVideoFileNames(file).subscribe(result => {
       console.log(" After service call", result);
-      this.responseFiles = result as [];
+      this.responseFiles = result as any[];
     });
   }
 }

@@ -1,4 +1,4 @@
-from flask import Flask, request, send_from_directory, jsonify
+from flask import Flask, request, send_from_directory, jsonify, redirect , url_for
 from search import searchVideo
 # set the "static" directory as the static folder.
 # this will ensure that all the static files are under one folder
@@ -20,15 +20,23 @@ def upload_file():
     file = request.files['file']
     print (file.filename)
     file.save("uploadedFiles/"+file.filename)
-    # TODO: call cbvr function this is written by anmol new content
-    # response_filenames = searchVideo(file.filename)
+    # TODO: call cbvr function this is written for response files
+    response_filenames = searchVideo(file.filename)
     #
     # print (response_filenames)
-    response_filenames = ['data/CAR/car (21).avi', 'data/CAR/car (21).avi', 'data/CAR/car (14).avi', 'data/CAR/car (13).avi', 'data/WALK/Movie_0042.avi', 'data/CAR/car (13).avi', 'data/WALK/Movie_0042.avi', 'data/MISC/Movie_0025 (2).avi', 'data/CAR/car (11).avi', 'data/CAR/car (18).avi', 'data/CAR/car (7).avi', 'data/CAR/car (7).avi']
+    # response_filenames = ['data/CAR/car (21).avi', 'data/CAR/car (21).avi', 'data/CAR/car (14).avi', 'data/CAR/car (13).avi', 'data/WALK/Movie_0042.avi', 'data/CAR/car (13).avi', 'data/WALK/Movie_0042.avi', 'data/MISC/Movie_0025 (2).avi', 'data/CAR/car (11).avi', 'data/CAR/car (18).avi', 'data/CAR/car (7).avi', 'data/CAR/car (7).avi']
 
     return jsonify(response_filenames)
+    # return redirect('result_video')
     # return "file uploaded"
     # [/home/ankita/btp7/CBVR/data/BIKE/cycle1.avi, /home/ankita/btp7/CBVR/data/BIKE/cycle1.avi]
+
+
+@app.route('/result')
+def result_video():
+    return '<h1> results are here </h1>'
+
+
 
 if __name__ == "__main__":
     app.run()

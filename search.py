@@ -11,10 +11,7 @@ import glob
 from skimage import io
 from skimage.color import rgb2gray
 import numpy as np
-<<<<<<< HEAD
 # from matplotlib import pyplot as plt
-=======
->>>>>>> def1e2c80be657732602032dc2b83d09364f7112
 
 # construct the argument parser and parse the arguments
 # ap = argparse.ArgumentParser()
@@ -114,6 +111,7 @@ def searchVideo(query):
 
 	# loop over the results
 	path_video = []
+	# path_video.append("uploadedFiles/"+query)
 	for (score, resultID) in results:
 		# load the result image and display it
 		result = cv2.imread("data/"+ resultID)
@@ -146,37 +144,3 @@ def searchVideo(query):
 #
 # plt.subplot(4,4,5),plt.imshow(result_images[0])
 # plt.title('Result 1'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,6),plt.imshow(result_images[1])
-# plt.title('Result 2'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,7),plt.imshow(result_images[2])
-# plt.title('Result 3'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,8),plt.imshow(result_images[3])
-# plt.title('Result 4'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,9),plt.imshow(result_images[4])
-# plt.title('Result 5'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,10),plt.imshow(result_images[5])
-# plt.title('Result 6'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,11),plt.imshow(result_images[6])
-# plt.title('Result 7'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,12),plt.imshow(result_images[7])
-# plt.title('Result 8'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,13),plt.imshow(result_images[8])
-# plt.title('Result 9'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,14),plt.imshow(result_images[9])
-# plt.title('Result 10'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,15),plt.imshow(result_images[10])
-# plt.title('Result 11'), plt.xticks([]), plt.yticks([])
-#
-# plt.subplot(4,4,16),plt.imshow(result_images[11])
-# plt.title('Result 12'), plt.xticks([]), plt.yticks([])
-# plt.show()
