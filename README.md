@@ -5,7 +5,7 @@ cd ${PROJECT_FOLDER}
 # On root folder run file server to fetch video files
 python -m SimpleHTTPServer 3333
 
-# Run pyhon api server
+# Run python api server
 python api.py
 
 # Run Webapp
